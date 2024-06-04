@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phonestore</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/logo.png" type="image/gif" sizes="16x16" />
+  </head>
+  <style>
+    body {
+      background-color: #331f1f;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23798EDD'/%3E%3Cstop offset='1' stop-color='%23331F1F'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23FF4EA2' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23FF4EA2' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.47'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+  <body class="felx flex-col">
+    <!--*************************************navbar**************************************-->
+
+    <nav class="bg-white border-gray-200 dark:bg-gray-800">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a
+          href="/index.html"
+          class="flex items-center space-x-3 rtl:space-x-reverse"
+        >
+          <img src="/logo.png" class="h-10" alt="Logo" />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Phonestore</span
+          >
+        </a>
+        <div class="flex md:order-2">
+          <button
+            type="button"
+            data-collapse-toggle="navbar-search"
+            aria-controls="navbar-search"
+            aria-expanded="false"
+            class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1"
+          >
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+            <span class="sr-only">Search</span>
+          </button>
+          <div class="relative hidden md:block">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <span class="sr-only">Search icon</span>
+            </div>
+            <input
+              type="text"
+              id="search-navbar"
+              class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+              placeholder="Search..."
+            />
+          </div>
+          <button
+            data-collapse-toggle="navbar-search"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-search"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-search"
+        >
+          <div class="relative mt-3 md:hidden">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              id="search-navbar"
+              class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search..."
+            />
+          </div>
+          <ul
+            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="/index.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0 md:dark:hover:text-yellow-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <button
+                id="dropdownNavbarLink"
+                data-dropdown-toggle="dropdownNavbar"
+                class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-yellow-500 md:p-0 md:w-auto dark:text-white md:dark:hover:text-yellow-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+              >
+                Products
+                <svg
+                  class="w-2.5 h-2.5 ms-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 6"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 4 4 4-4"
+                  />
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                id="dropdownNavbar"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+              >
+                <ul
+                  class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                  aria-labelledby="dropdownLargeButton"
+                >
+                  <li>
+                    <a
+                      href="/products/Phone.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Phone</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/products/Smartwatch.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Smartwatch</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/products/Tablets.html"
+                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                      >Tablets</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a
+                href="/Shop.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-yellow-500 md:p-0 dark:text-white md:dark:hover:text-yellow-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Shop</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--************************************************main********************************************-->
+    <main   >
+       
+      <section class= "h-screen     ">
+        <div
+          class="py-8 px-4 mx-auto max-w-screen-md text-center lg:py-16 lg:px-12"
+        >
+          <svg
+            class="mx-auto mb-4 w-10 h-10 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M331.8 224.1c28.29 0 54.88 10.99 74.86 30.97l19.59 19.59c40.01-17.74 71.25-53.3 81.62-96.65c5.725-23.92 5.34-47.08 .2148-68.4c-2.613-10.88-16.43-14.51-24.34-6.604l-68.9 68.9h-75.6V97.2l68.9-68.9c7.912-7.912 4.275-21.73-6.604-24.34c-21.32-5.125-44.48-5.51-68.4 .2148c-55.3 13.23-98.39 60.22-107.2 116.4C224.5 128.9 224.2 137 224.3 145l82.78 82.86C315.2 225.1 323.5 224.1 331.8 224.1zM384 278.6c-23.16-23.16-57.57-27.57-85.39-13.9L191.1 158L191.1 95.99l-127.1-95.99L0 63.1l96 127.1l62.04 .0077l106.7 106.6c-13.67 27.82-9.251 62.23 13.91 85.39l117 117.1c14.62 14.5 38.21 14.5 52.71-.0016l52.75-52.75c14.5-14.5 14.5-38.08-.0016-52.71L384 278.6zM227.9 307L168.7 247.9l-148.9 148.9c-26.37 26.37-26.37 69.08 0 95.45C32.96 505.4 50.21 512 67.5 512s34.54-6.592 47.72-19.78l119.1-119.1C225.5 352.3 222.6 329.4 227.9 307zM64 472c-13.25 0-24-10.75-24-24c0-13.26 10.75-24 24-24S88 434.7 88 448C88 461.3 77.25 472 64 472z"
+            />
+          </svg>
+          <h1
+            class="mb-4 text-4xl font-bold tracking-tight leading-none text-gray-900 lg:mb-6 md:text-5xl xl:text-6xl dark:text-white"
+          >
+            Under Maintenance
+          </h1>
+          <p
+            class="font-light text-gray-500 md:text-lg xl:text-xl dark:text-gray-200"
+          >
+            Our Enterprise administrators are performing scheduled maintenance.
+          </p>
+        </div>
+      </section>
+    </main>
+    <!--************************************************footer********************************************-->
+    <footer
+      class="bg-white border-gray-200 dark:bg-gray-800 text-white p-4 grid grid-cols-3 gap-8"
+    >
+      <div>
+        <div class="flex-1">
+          <h3 class="text-xl font-bold mb-4">PhoneStore</h3>
+          <p class="mb-2">123 Main St.</p>
+          <p class="mb-2">Anytown, USA 12345</p>
+          <p class="mb-2">
+            <a href="mailto:info@company.com" class="hover:underline"
+              >info@company.com</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Fast Link</h3>
+          <a class="mb-2 block hover:underline" href="/index.html">Home</a>
+          <a class="mb-2 block hover:underline" href="/products/Phone.html"
+            >Products</a
+          >
+          <a class="mb-2 block hover:underline" href="/Shop.html">Shop</a>
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Social Media</h3>
+          <ul>
+            <li class="mb-2">
+              <a
+                class="block hover:underline cursor-pointer"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Facebook</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                class="block hover:underline cursor-pointer"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Twitter</a
+              >
+            </li>
+            <li class="mb-2">
+              <a
+                class="block hover:underline cursor-pointer"
+                href="https://Instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Instagram</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
